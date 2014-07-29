@@ -1,0 +1,1 @@
+{"descriptor":{"id":"hotfixes","createTime":"2013-12-02T14:10:51.335","owner":"guyr@wix.com","description":"artifact to allow us to quickly GA a hotfix to any file in web","constraints":{"NewBIEvents":"optional-before"}},"files":[{"id":"hotfixes-editor","tags":["editor","test"],"url":"javascript/hotfixes-editor.min.js"}]}

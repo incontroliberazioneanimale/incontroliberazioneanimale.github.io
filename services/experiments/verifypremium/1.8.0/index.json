@@ -1,0 +1,1 @@
+{"descriptor":{"id":"verifypremium","createTime":"2013-07-16T11:29:02.490","owner":"etai@wix.com","description":"sends BI events for sites which have no ads but don&#39;t pay"},"files":[{"id":"verifypremium-viewer","tags":["viewer","test"],"url":"javascript/verifypremium-viewer.min.js"},{"id":"verifypremium-tests","tags":["dontload"],"url":"test/verifypremium-tests.min.js"}]}

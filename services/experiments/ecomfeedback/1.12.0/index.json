@@ -1,0 +1,1 @@
+{"descriptor":{"id":"ecomfeedback","createTime":"2013-11-26T18:15:51.645","owner":"Tanya","description":"New feedback msg after product added to cart","constraints":{}},"files":[{"id":"ecomfeedback-common","tags":["common","test"],"url":"javascript/ecomfeedback-common.min.js"},{"id":"ecomfeedback-viewer","tags":["viewer","test"],"url":"javascript/ecomfeedback-viewer.min.js"}]}

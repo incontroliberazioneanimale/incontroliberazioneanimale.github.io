@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="noindex, nofollow">
+    <title>Wix Login</title>
+    <link rel="shortcut icon" href="//www.wix.com/favicon.ico" type="image/x-icon"/>
+
+
+    <script src="https://sslstatic.wix.com/services/third-party/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://sslstatic.wix.com/services/wix-users/2.411.0//login-dialog/scripts/login-dialog.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery.noConflict();
+
+        var featureToggles = {};
+        var hashObj = {};
+        var hashArray = (window.location.hash.substr(1)).split('&');
+        jQuery.each(hashArray, function (index, value) {
+            var keyVal = value.split('=');
+            if (keyVal.length === 2) {
+                hashObj[keyVal[0]] = decodeURIComponent(keyVal[1]);
+            }
+        });
+
+        jQuery(document).ready(function () {
+            UserServerApi.setOptions({
+                usersDomain: 'https://users.wix.com/wix-users/api/',
+                jsonpEnabled: !hashObj.state
+            });
+
+
+            var opts = {
+                locale: 'it',
+                featureToggles: featureToggles,
+                jQueryLib: jQuery,
+                postLogin: 'http:\/\/www.wix.com\/my-account',
+                postSignUp: 'http:\/\/www.wix.com\/new\/account',
+                onLoad: function () {
+                    if (hashObj.state) {
+                        LoginDialog.handleGoogleSocialLogin(hashObj);
+                    } else {
+                        LoginDialog.show({ origin: 'http:\/\/www.wix.com\/my-account' });
+                    }
+                },
+                disableClose: true
+            };
+
+                                                opts.experimentMap =[];
+
+            LoginDialog.init(opts);
+        });
+    </script>
+</head>
+
+<body style="margin-top: 0;">
+                <script type="text/javascript">
+//<![CDATA[
+(function() {
+var _analytics_scr = document.createElement('script');
+_analytics_scr.type = 'text/javascript'; _analytics_scr.async = true; _analytics_scr.src = '/_Incapsula_Resource?SWJIYLWA=2977d8d74f63d7f8fedbea018b7a1d05&ns=8';
+var _analytics_elem = document.getElementsByTagName('script')[0]; _analytics_elem.parentNode.insertBefore(_analytics_scr, _analytics_elem);
+})();
+// ]]>
+</script></body>
+</html>
+
